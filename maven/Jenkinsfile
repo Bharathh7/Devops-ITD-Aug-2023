@@ -23,7 +23,7 @@ pipeline {
         stage ('Deploy-Tomcat') {
             steps {
                 script {
-                    deploy adapters: [tomcat9(credentialsId: 'tomcat-manager', path: '', url: 'http://65.0.129.65:7777//')], 
+                    deploy adapters: [tomcat9.0.84(credentialsId: 'tomcat-manager', path: '', url: 'http://65.0.129.65:7777//')], 
                                      contextPath: '/itdefined-war-1.0.0', 
                                      war: 'maven/simple-war/target/itdefined-war-1.0.0.war'
                 }
